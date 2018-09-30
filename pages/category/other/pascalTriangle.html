@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js">
+  </script>
+  <meta charset="utf-8" name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../../css/search.css">
+  <title>ALGOEZ</title>
+  <style>
+    table, td {
+        border: 1px solid #009688;
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+    tr {
+        height: 64px;
+    }
+    td {
+        width: 64px;
+    }
+  </style>
+</head>
+<body>
+  <h2 class="title">Pascal Triangle</h2>
+  <div class="desc">
+    <p>
+      <b>Description:</b> Contruct a pascal triangle<br>
+    </p>
+  </div>
+  
+  <div class="input">
+    <input type="text" id="inpVal" class="small" placeholder="Number"><br>
+    <!-- <button id="rand">Random data</button><br> -->
+    <button style="width: 50%; margin-top: 20px" id="start">Start now</button>
+  </div>
+  
+  <div class="info">
+    <span class="title" id="title" style="margin-right: 20px">
+  </div>
+  
+  <div id="details" class="title"></div>
+
+  <div id="displayArea" class="title">
+    <table id="table">
+    </table>
+  </div>
+  
+  <script src="../../src/other/pascalTriangle.js"></script>
+</body>
+</html>

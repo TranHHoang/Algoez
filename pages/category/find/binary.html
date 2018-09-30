@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.js"
+    integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+    crossorigin="anonymous">        
+  </script>
+  <meta charset="utf-8" name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../../css/search.css">
+  <title>ALGOEZ</title>
+</head>
+<body>
+  <h2 class="title">Binary Search</h2>
+  <div class="desc">
+    <p>
+      <b>Description:</b> This is the fastest finding algorithm on array. The main drawback is that it can only be used in sorted array, otherwise it fail to find the value.<br>
+      <b>Complexity:</b> O(log(n))
+    </p>
+  </div>
+  
+  <div class="input">
+    <input type="text" id="inpArray" placeholder="Input array">
+    <input type="text" class="small" id="inpVal" placeholder="Input value to be found">
+    <button id="rand">Random data</button><br>
+    <button style="width: 50%; margin-top: 20px" id="start">Start now</button>
+  </div>
+  
+  <div class="info">
+    <span class="title" style="margin-right: 20px"><b>Finding</b></span><span id="valToFind" class="cell"></span>
+  </div>
+
+  <div id="arrayDisplay">
+  </div>
+  
+  <div id="details" class="title"></div>
+  <script src="../../../src/stdlib.js"></script>
+  <script src="../../src/find/binary.js"></script>
+</body>
+</html>

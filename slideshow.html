@@ -1,0 +1,40 @@
+<html>
+    <link rel="stylesheet" href="./css/slideshow.css">
+    <div class="slideshow-container">
+        <div class="slides fade">
+            <div id="img" style="background: url('./res/1.PNG') center no-repeat; display: block; width: 100%; height: 680px"></div>
+            <!-- <img src="./res/1.PNG" alt="" width=""> -->
+            <!-- <div class="caption">Shuffle element in array</div> -->
+        </div>
+
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        index = 1;
+        function mod(a, b) {
+            return ((a % b) + b) % b;
+        }
+        function changeImg() {
+            $("#img").fadeOut(function() {
+                $(this).css("background", `url('./res/${index}.png') center no-repeat`);
+            });
+            $("#img").fadeIn();
+        }
+        $(".prev").click(function() {
+            index = mod(index - 1, 5);
+            changeImg();
+        });
+        $(".next").click(function() {
+            index = mod(index + 1, 5);
+            changeImg();
+        });
+
+        $(function() {
+            setInterval(function() {
+                $(".next").click();
+            }, 3000);
+        });
+    </script>
+</html>

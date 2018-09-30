@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js">        
+  </script>
+  <meta charset="utf-8" name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../../css/search.css">
+  <title>ALGOEZ</title>
+</head>
+<body>
+  <h2 class="title">Shuffle element in array</h2>
+  <div class="desc">
+    <p>
+      <b>Description:</b> Using Fisher-Yates (or Knuth) shuffle algorithm is efficiency to shuffle array of arbitrary data<br>
+      <b>Complexity:</b> O(n)
+    </p>
+  </div>
+  
+  <div class="input">
+    <input type="text" id="inpArray" placeholder="Array">
+    <button id="rand">Random data</button><br>
+    <button style="width: 50%; margin-top: 20px" id="start">Start now</button>
+  </div>
+
+  <div id="arrayDisplay">
+  </div>
+  
+  <div id="details" class="title"></div>
+  <script src="../../../src/stdlib.js"></script>
+  <script src="../../src/array/shuffle.js"></script>
+  <!-- <script>document.domain = "localhost"</script> -->
+</body>
+</html>

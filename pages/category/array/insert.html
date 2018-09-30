@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.js"
+    integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+    crossorigin="anonymous">        
+  </script>
+  <meta charset="utf-8" name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../../css/search.css">
+  <title>ALGOEZ</title>
+</head>
+<body>
+  <h2 class="title">Insert element to array</h2>
+  <div class="desc">
+    <p>
+      <b>Description:</b> Array is not an efficient data structure to insert a new element,
+      and it is highly unefficiency when frequently insert new element<br>
+      <b>Complexity:</b> O(n)
+    </p>
+  </div>
+  
+  <div class="input">
+    <input type="text" id="inpArray" placeholder="Array">
+    <input class="small" type="text" id="inpVal" placeholder="Value to be inserted">
+    <input class="small" type="text" id="inpPos" placeholder="Position">
+    <button id="rand">Random data</button><br>
+    <button style="width: 50%; margin-top: 20px" id="start">Start now</button>
+  </div>
+  
+  <div class="info">
+    <span class="title" style="margin-right: 10px"><b>Insert</b></span><span id="valToFind" class="cell"></span><span class="title">into position</span><span id="pos" class="cell"></span>
+  </div>
+
+  <div id="arrayDisplay">
+  </div>
+  
+  <div id="details" class="title"></div>
+  <script src="../../../src/stdlib.js"></script>
+  <script src="../../src/array/insert.js"></script>
+</body>
+</html>

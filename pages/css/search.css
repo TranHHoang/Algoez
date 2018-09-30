@@ -1,0 +1,134 @@
+* {
+  color: white;
+}
+
+span.cell {
+  display: inline-block;
+  width: 48px;
+  line-height: 48px;
+  text-align: center;
+  /* border: 3px solid #009688; */
+  background: white;
+  font-family: 'Segoe UI';
+  font-size: 24px;
+  position: relative;
+  color: #009688;
+  margin: 5px;
+}
+
+body {
+  background-color: #009688;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+  border: none;
+  /* border-bottom: 2px solid #009688; */
+  outline: none;
+  padding: 10px;
+  text-align: center;
+  width: 10%;
+  transition: width 1s;
+  border-radius: 25px;
+  color: #009688;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+input.small:focus {
+  width: 15%;
+}
+
+input:focus {
+  outline: none;
+  width: 30%;
+}
+
+div.input {
+  text-align: center;
+  font-size: 32px;
+}
+
+button {
+  background-color: #009688;
+  border: 1px solid white;
+  color: white;
+  outline: none;
+  /* height: 32px; */
+  padding: 10px;
+  font-size: 14px;
+  /* margin: 0 auto; */
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  /* border: 2px solid orange; */
+  color: #009688;
+}
+
+div.info {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.title {
+  font-family: 'Segoe UI';
+  text-align: center;
+  /*font-weight: bold;*/
+  /* color: #009688; */
+  color: white;
+  font-size: 32px;
+  /* border: 1px dashed white; */
+  /* text-decoration: underline; */
+}
+
+.input-array {
+  /*text-decoration: underline;*/
+  color: #009688;
+  font-weight: bold;
+}
+
+.desc {
+  border: 1px dashed #009688;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  color: #009688;
+  font-size: 20px;
+}
+
+#arrayDisplay {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#displayArea {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+#details {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 15px;
+  cursor: pointer;
+  background: #009688;
+  border-radius: 10px;
+}

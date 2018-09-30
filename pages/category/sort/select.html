@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js">        
+  </script>
+  <meta charset="utf-8" name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../../css/search.css">
+  <title>Selection Sort</title>
+</head>
+<body>
+  <h2 class="title">Selection Sort</h2>
+  <div class="desc">
+    <p>
+      <b>Description:</b>Array is not an efficient data structure to delete an element,
+      and it is highly unefficiency when frequently delete elements<br>
+      <b>Complexity:</b> O(n<sup>2</sup>)
+    </p>
+  </div>
+  
+  <div class="input">
+    <input type="text" id="inpArray" placeholder="Input array">
+    <button id="rand">Random data</button><br>
+    <button style="width: 50%; margin-top: 20px" id="start">Start now</button>
+  </div>
+  
+  <div class="info">
+    <span class="title" style="margin-right: 20px"><b>Minimum value: </b></span><span id="minVal" class="cell"></span>
+  </div>
+
+  <div id="arrayDisplay">
+  </div>
+  
+  <div id="details" class="title"></div>
+  <script src="../../src/sort/select.js"></script>
+</body>
+</html>

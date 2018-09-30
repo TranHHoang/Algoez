@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/browse.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[ Algorithm Visualization ]</title>
+    <header class="font-default title-bar">
+        <div id="menu">
+            <div class="toggle">☰</div>
+            <div class="navbar">
+                <ul>
+                   <li><a href="./pages/category/array/shuffle.html" target="content">Array shuffle</a></li>
+                   <li><a href="./pages/category/array/insert.html" target="content">Array insert</a></li>
+                   <li><a href="./pages/category/array/remove.html" target="content">Array remove</a></li>
+                   <li><a href="./pages/category/find/binary.html" target="content">Binary search</a></li>
+                   <li><a href="./pages/category/find/linear.html" target="content">Linear search</a></li>
+                   <li><a href="./pages/category/number/factor.html" target="content">Number factorization</a></li>
+                   <li><a href="./pages/category/number/sieve.html" target="content">Sieve of Eranthoses</a></li>
+                   <li><a href="./pages/category/number/radix.html" target="content">Convert radix</a></li>
+                   <li><a href="./pages/category/other/pascalTriangle.html" target="content">Pascal triangle</a></li>
+                   <li><a href="./pages/category/sort/insert.html" target="content">Insertion sort</a></li>
+                   <li><a href="./pages/category/sort/bubble.html" target="content">Bubble sort</a></li>
+                   <li><a href="./pages/category/sort/select.html" target="content">Selection sort</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-brand" style="position: relative; margin-left: 70px">
+            <h1 class="site-title">
+                <a href="index.html" class="link-format">ALGOEZ</a>
+                <div class="color-changer" style="display: inline-block">
+                    <select name="colors">
+                        <option value="#F44336" style="background-color: #f44336;">Red</option>
+                        <option value="#E91E63" style="background-color: #E91E63;">Pink</option>
+                        <option value="#9C27B0" style="background-color: #9C27B0;">Purple</option>
+                        <option value="#673AB7" style="background-color: #673AB7;">Deep Purple</option>
+                        <option value="#3F51B5" style="background-color: #3F51B5;">Indigo</option>
+                        <option value="#2196F3" style="background-color: #2196F3;">Blue</option>
+                        <option value="#03A9F4" style="background-color: #03A9F4;">Light Blue</option>
+                        <option value="#00BCD4" style="background-color: #00BCD4;">Cyan</option>
+                        <option value="#009688" style="background-color: #009688;">Teal</option>
+                        <option value="#4CAF50" style="background-color: #4CAF50;">Green</option>
+                        <option value="#8BC34A" style="background-color: #8BC34A;">Light Green</option>
+                    </select>
+                </div>
+            </h1>
+            <p class="site-desc">Better way to understand algorithms</p>
+        </div>
+        <div id="searchPlace">
+            <input id="search" autocomplete="off" type="text" placeholder="What algorithm do you want to find?">
+            <div id="searchRes">
+                <div><a href="./pages/category/array/shuffle.html" target="content">Array shuffle</a></div>
+                <div><a href="./pages/category/array/insert.html" target="content">Array insert</a></div>
+                <div><a href="./pages/category/array/remove.html" target="content">Array remove</a></div>
+                <div><a href="./pages/category/find/binary.html" target="content">Binary search</a></div>
+                <div><a href="./pages/category/find/linear.html" target="content">Linear search</a></div>
+                <div><a href="./pages/category/number/factor.html" target="content">Number factorization</a></div>
+                <div><a href="./pages/category/number/sieve.html" target="content">Sieve of Eranthoses</a></div>
+                <div><a href="./pages/category/number/radix.html" target="content">Convert radix</a></div>
+                <div><a href="./pages/category/other/pascalTriangle.html" target="content">Pascal triangle</a></div>
+                <div><a href="./pages/category/sort/insert.html" target="content">Insertion sort</a></div>
+                <div><a href="./pages/category/sort/bubble.html" target="content">Bubble sort</a></div>
+                <div><a href="./pages/category/sort/select.html" target="content">Selection sort</a></div>
+            </div>
+        </div>
+        
+        <div class="nav">
+            <a href="index.html" class="link-format">Home</a>
+            <a href="" class="link-format" id="browse">Browse</a>
+            <a href="about.html" target="content" class="link-format">About</a>
+        </div>
+    </header>
+    <div class="page-content">
+        <div class="speed hover"><div>&lt;&lt;&nbsp;SPEED</div><input type="range" id="speedSlider" min="200" max="5000" value="1000" id="speedSlide"></div>
+        <div class="code"></div>
+        <iframe id="frame" src="" frameborder="0" style="z-index: -1" name="content" width="100%" height="680px"></iframe>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./src/stdlib.js"></script>
+    <script>
+        oldColor = "#009688";
+        newColor = "";
+        $("select").on("change", function() {
+            newColor = $(this).val();
+            for (var i = 0; i < $("*").toArray().length; i++) {
+                var e = $("*")[i];
+                if (rgb2hex($(e).css("background-color")) === oldColor) {
+                    $(e).css("background-color", newColor);
+                }
+                else if (rgb2hex($(e).css("color")) === oldColor) {
+                    $(e).css("color", newColor);
+                }
+            }
+            document.getElementById("frame").contentWindow.postMessage("color " + oldColor + " " + newColor, "*")
+            oldColor = newColor;
+            // $("#browse").attr("href", "browse.html?color=" + cl);
+        });
+
+        function rgb2hex(rgb){
+            rgb = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+),?\s*\d*\)/);
+            return ("#" +
+            ("0" + parseInt(rgb[1]).toString(16)).slice(-2) +
+            ("0" + parseInt(rgb[2]).toString(16)).slice(-2) +
+            ("0" + parseInt(rgb[3]).toString(16)).slice(-2)).toUpperCase();
+        }
+
+        window.addEventListener("message", function(e) {
+            hightlightLine(e.data);
+            // alert(e.data);
+            // setTimeout(alert, 1000, e.data);
+        }, false);
+
+        chosenIndex = -1;
+        var codes = [
+            `for i := n - 1 downto 1:
+            \tj = random(0, i);
+            \tswap(arr[i], arr[j]);`,
+
+            `arr := resize(arr, size + 1);
+            for i := index + 1 to size + 1:
+            \tarr[i] := arr[i - 1];
+            arr[index] := value;`, 
+
+            `for i := 0 to size - 1:
+            \tif arr[i] = val:
+            \t\tbreak;
+            for i := index to size - 2:
+            \tarr[i] := arr[i + 1];
+            arr := resize(arr, size - 1);`,
+
+            `
+            left := 0;
+            right := size - 1;
+            while left < right:
+            \tmid := (left + right) / 2;
+            \tif arr[mid] = value:
+            \t\treturn mid
+            \telse if arr[mid] < value:
+            \t\tmid := right - 1;
+            \telse:
+            \t\tmid := left + 1;
+            return -1;
+            `,
+
+            `for i := 0 to size - 1:
+            \tif arr[i] = value:
+            \t\treturn i;
+            return -1;`,
+
+            `factor := 2;
+            while number > 0:
+            \tif number % factor = 0:
+            \t\tnumber := number / factor;
+            \telse:
+            \t\tfactor := factor + 1;`,
+            
+            `arr[0] := arr[1] := false;
+            for i := 2 to sqrt(n):
+            \tif arr[i]:
+            \t\tj := i * i;
+            \t\twhile j < n:
+            \t\t\ta[j] := false;
+            \t\t\tj := j + i;`, // sieve
+            ``, // radix1
+
+            `arr[0][0] := 1;
+            for i := 1 to value:
+            \tfor j := 0 to i:
+            \t\tarr[i][j] := arr[i - 1][j - 1] + arr[i - 1][j]`, // pascal
+
+            `for i := 1 to size - 1:
+            \tfor j := i - 1 downto 0:
+            \t\tif arr[j] > a[i]:
+            \t\t\tcontinue;
+            \t\telse:
+            \t\t\tbreak;
+            \tinsert(arr[j], j);`, // insert
+
+            `for i := size - 1 downto 1:
+            \tfor j := 0 to i - 1:
+            \t\tif a[j] > a[j + 1]:
+            \t\t\tswap(a[j], a[j + 1]);`, // bubble
+            
+            `for i := 0 to size - 1:
+            \tminVal := a[i];
+            \tminPos := i;
+            \tfor j := i + 1 to size - 1:
+            \t\tif min > a[j]:
+            \t\t\tminVal := a[j];
+            \t\t\tminPos := j;
+            \tswap(a[i], a[minPos]);`  // select
+        ];
+
+        function syntaxHightlight(code) {
+            var kw = ['sqrt', 'for', 'in', 'downto', 'to', 'random', 'swap', 'resize', 'while', 'if', 'else', 'return', 'insert'];
+            kw = kw.map(function (e) { return `(${e})([^a-z])`; });
+            for (var i = 0; i < kw.length; i++) {
+                var re = new RegExp(kw[i], "g");
+                code = code.replace(re, "<b>$1</b>$2");
+            }
+            return code;
+        }
+
+        function toHTMLCode(s) {
+            var res = "<div id='l0'>";
+            var line = 0;
+            for (var i = 0; i < s.length; i++) {
+                // if (s[i] == ' ') res += "&nbsp;";
+                if (s[i] == '\t') res += "&nbsp;&nbsp;&nbsp;&nbsp;";
+                else if (s[i] == '\n') res += `</div><div id='l${++line}'>`;
+                else if (s[i] == '<') res += "&lt;";
+                else if (s[i] == '>') res += "&gt;";
+                else res += s[i];
+            }
+            res += "</div>";
+            return syntaxHightlight(res);
+        }
+
+        $(function() {
+            // $(".navbar").hide();
+            $(".toggle").click(function() {
+                $(".navbar").slideToggle(800);
+            });
+            $(".speed input").hide();
+            $(".navbar a").click(function() {
+                $(".navbar a").mouseup(function() {
+                    $(this).parent("li").css("background-color", "gray");
+                });
+                $(".navbar a").mousedown(function() {
+                    $(this).parent("li").css("background-color", "orange");
+                });
+                $(".code").addClass("hover");
+
+                $($(".code")[0]).html("{}&nbsp;CODE");
+                
+                chosenIndex = $(".navbar a").index(this);
+                // $($(".code")[0]).html(toHTMLCode(codes[$(".navbar a").index(this)]));
+                // $(this).parent("li").css("background-color", "orange");
+            })
+
+            $(".speed input").change(function() {
+                $(this).attr("title", $(this).val());
+                document.getElementById("frame").contentWindow.postMessage("speed " + $(this).val(), "*");
+            });
+
+            $(".speed input").on('input', function() {
+                $(this).trigger("change");
+            });
+
+            $(".speed").hover(function() {
+                $(this).css("width", "20%");
+                $(this).children("div").hide();
+                $(this).children("input").show();
+                // $(this).html("<input type=")
+            }, function() {
+                $(this).css("width", "");
+                $(this).children("div").show();
+                $(this).children("input").hide();
+            });
+
+            $(".code").click(function() {
+                $(this).removeClass("hover");
+                // $(this).css("cursor", "auto");
+                // $(this).css({"width": "auto", "font-size": "", "color": "", "background": "transparent"});
+                $(this).html(toHTMLCode(codes[chosenIndex]));
+                $(this).children("div").css("padding-right", "20px");
+            });
+            
+            $("#searchRes a").hover(function() {
+                $(this).css("color", "white");
+                $(this).parent("div").css("background-color", "#009688");
+
+            }, function() {
+                $(this).css("color", "");
+                $(this).parent("div").css("background-color", "");
+            });
+
+            $("#searchRes a").click(function() {
+                // $(this).css("color", "white");
+                $(this).parent().parent("div").hide();
+                $(".page-content").show();
+                $(".code").addClass("hover");
+            });
+
+            $("#search").on("click keyup", function() {
+                // $("#searchRes").html(s).hide();
+                var inp = $(this).val().toUpperCase();
+                if (inp.trim() != "") {
+                    $("#searchRes").show();
+                    $(".page-content").hide();
+                    var list = $("div#searchRes div")
+                    // alert(list)
+                    // $("#searchRes").css("visibility", "visible")
+                    for (var i = 0; i < list.length; i++) {
+                        if ($(list[i]).children("a").html().toUpperCase().indexOf(inp) > -1) {
+                            $(list[i]).show();
+                            // s += `<div><a href='${curList[i].path}'>${curList[i].id}</a></div>`;
+                        }
+                        else {
+                            $(list[i]).hide();
+                        }
+                    }
+                    // $("#searchRes").hide();
+                    // $("#searchRes").show();
+                    // $("#searchRes").html(s).fadeIn();
+                }
+                else {
+                    $(".page-content").show();
+                    $("#searchRes").hide();                    
+                }
+            });
+        });
+    </script>
+</html>

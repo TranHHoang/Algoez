@@ -1,0 +1,50 @@
+<html>
+    <link rel="stylesheet" href="../../css/search.css">
+    <div style="text-align: center;">
+        <h1 style="" class="title">Sieve of Eranthoses</h1>
+        <input type="number" name="max" id="inp_num" required placeholder="Maximum number to check">
+        <button name="btnStart" onclick="start();">Start now</button>
+        <br><br><span>Speed:</span>
+        <input type="range" name="points" min="10" max="500" id="speedSlide">
+        <div id="desc"></div>
+        <p id="table"></p>
+    </div>    
+    <style>
+        div#desc {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        /* input[type="number"] {
+            border: none;
+            border-bottom: 2px solid #009688;
+            padding: 5px;
+            text-align: center;
+            width: 20%;
+            transition: width 1s;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            width: 30%;
+        } */
+
+        table, tr, td {
+            /* border: 1px solid #009688; */
+            color: #009688;
+            border-collapse: collapse;
+            text-align: center;
+            margin: 0px auto;
+        }
+        
+        tr, td {
+            background-color: white;
+            padding: 10px;
+            /* background-color: blue; */
+        }
+    </style>
+    <script src="../../../src/stdlib.js"></script>
+    <script src="../../src/number/sieve.js"></script>
+</html>

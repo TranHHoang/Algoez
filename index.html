@@ -2,21 +2,48 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="src/script.js"></script>
+    <script>window.color = "#009688"</script>
     <title>[ Algorithm Visualization ]</title>
   </head>
+  <style>
+    select {
+      padding: 5px;
+      /* background: transparent */
+    }
+    
+    option {
+      color: white;
+    }
+
+    div.color-changer {
+      display: inline-block;
+    }
+  </style>
   <body>
     <!-- Navbar -->
-    <header class="font-default">
+    <header class="font-default title-bar">
       <div class="site-brand">
-        <h1 class="site-title">ALGOEZ</h1>
-        <p class="site-desc">Better way to understand algorithm</p>
+        <h1 class="site-title">
+          <a href="" class="link-format">ALGOEZ</a>
+        </h1>
+        <p class="site-desc">Better way to understand algorithms</p>
       </div>
       <div class="nav">
-        <a href="">Home</a>
-        <a href="">Browse</a>
-        <a href="">About</a>
+        <a href="" class="link-format">Home</a>
+        <a href="browse.html" class="link-format" id="browse">Browse</a>
+        <a href="about.html" target="content" class="link-format">About</a>
       </div>
     </header>
+    <div class="page-content">
+      <iframe src="slideshow.html" frameborder="0" name="content" width="100%" height="700px"></iframe>
+    </div>
   </body>
 </html>

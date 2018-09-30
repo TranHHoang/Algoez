@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    background-color: #009688;
+}
+
+* {
+    color: white;
+}
+
+div.upper {
+    background: url("../res/wall.jpg") no-repeat fixed bottom;
+    /* display: inline-block; */
+    height: 400px;
+    width: 100%;
+    /* position: relative; */
+    position: absolute;
+    z-index: -1;
+}
+
+div.lower {
+    position: relative;
+    display: block;
+    top: 165px;
+    /* background-color: rgba(255, 255, 255, 0.171); */
+    height: 200px;
+    z-index: -1;
+}
+
+div.avatar {
+    display: flex;
+    border-radius: 50%;
+    border: 5px solid white;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    top: 0;
+    background-image: url("../res/ava.png");
+    /* margin-top: 100px; */
+    /* padding: 100px; */
+    position: relative;  
+    /* z-index: -1; */
+}
+
+h1#author {
+    width: 100%;
+}
+
+.author-title {
+    text-align: center;
+    opacity: 0;
+    /* width: 100%; */
+    position: relative;
+    /* transform: translateX(0%); */
+    /* left: 100px; */
+    /* padding-top: 120px; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* margin-top: 50px; */
+}

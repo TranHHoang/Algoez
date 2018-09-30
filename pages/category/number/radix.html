@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js">
+  </script>
+  <meta charset="utf-8" name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../../css/search.css">
+  <title>ALGOEZ</title>
+  <style>
+    table, td {
+      border-collapse: collapse;
+      padding: 10px;      
+      text-align: right;
+      margin: 0 auto;
+    }
+    td:nth-child(odd) {
+      border-right: 2px solid #009688;
+    }
+  </style>
+</head>
+<body>
+  <h2 class="title">Radix conversion</h2>
+  <div class="desc">
+    <p>
+      <b>Description:</b> Convert a number between bases<br>
+    </p>
+  </div>
+  
+  <div class="input">
+    <input type="text" id="inpVal" class="small" placeholder="Number">
+    <input type="text" id="inpFrom" class="small" placeholder="From base" value="10">
+    <input type="text" id="inpTo" class="small" placeholder="To base"><br>
+    <!-- <button id="rand">Random data</button><br> -->
+    <button style="width: 50%; margin-top: 20px" id="start">Start now</button>
+  </div>
+  
+  <div class="info">
+    <span class="title" style="margin-right: 20px"><b>Convert </b><span id="from"></span> to <span id="to"></span></span>
+  </div>
+  
+  <div id="details" class="title"><b></b></div>
+
+  <div id="displayArea" class="title"></div>
+  
+  <script src="../../../src/stdlib.js"></script>
+  <script src="../../src/number/radix.js"></script>
+</body>
+</html>
